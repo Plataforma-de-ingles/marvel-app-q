@@ -29,11 +29,12 @@ module.exports = {
         library: { type: "module" },
 
         // For remotes (please adjust)
-        // name: "marvelApp",
-        // filename: "remoteEntry.js",
-        // exposes: {
-        //     './Component': './/src/app/app.component.ts',
-        // },        
+        name: "marvelApp",
+        filename: "remoteEntry.js",
+        exposes: {
+            './headerComponent': './src/app/shared/components/header/header.component.ts',
+            './footerComponent': './src/app/shared/components/header/footer.component.ts',
+        },        
         
         // For hosts (please adjust)
         // remotes: {
