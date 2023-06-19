@@ -1,0 +1,32 @@
+<div class="container">
+	<section class="title-block">
+		<h2>Listado de personajes</h2>
+		<hr>
+	</section>
+
+	<form class="search-block" [formGroup]="searchForm">
+		<div class="search-block__select-box">
+			<label for="select" class="search-block__label">Ordenar por:</label>
+			<select (change)="onSearch()" formControlName="orderBy" name="select" id="select" class="search-block__select">
+				<option *ngFor="let option of listOptions" [value]="option.value">{{ option.text }}</option>
+			</select>
+		</div>
+		<div class="search-block__input-box">
+			<input (search)="getCharacters()" formControlName="searchText" class="search-block__input" type="search"
+				placeholder="Buscar por Nombre" name="characters" id="characters-input">
+			<button type="button" (click)="onSearch()" class="btn btn-icon search-block__button">
+				<i class="fas fa-search"></i>
+			</button>
+		</div>
+	</form>
+
+	<section *ngIf="paginatorData" class="paginator">
+		<app-paginator [pageSize]="paginatorData.count" [pageIndex]="paginatorData.offset"
+			[totalItems]="paginatorData.total" (pageIndexChanged)="onChangePaginator($event)"></app-paginator>
+	</section>
+
+	<section class="characters-list">
+		<app-principal-card *ngFor="let character of characters" (onClickImage)="goToDetail($event)"
+			[character]="character"></app-principal-card>
+	</section>
+</div>

@@ -1,0 +1,14 @@
+<div class="product-card image-zoom">
+  <div class="product-card__image">
+    <img (click)="clickImage()" class="product-card__image__img" [src]="character.thumbnail | characterImage">
+  </div>
+  <div class="product-card__details">
+    <h4 class="product-card__details__title">{{ character.name }}</h4>
+    <h6 class="product-card__details__title">{{ (character.description.slice(0,150) || 'No description') + '...' }}
+    </h6>
+  </div>
+  <div class="product-card__favorite">
+    <button [ngClass]="{'product-card__favorite__button': true, 'product-card__favorite__button--selected': isFavorite}"
+      (click)="clickFavorite()"><i [ngClass]="{'far': !isFavorite, 'fas': isFavorite, 'fa-heart': true }"></i></button>
+  </div>
+</div>

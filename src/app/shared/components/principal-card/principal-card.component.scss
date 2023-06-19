@@ -1,0 +1,42 @@
+@import "../../../../theme/colors";
+@import '../../../../theme/utilities';
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  background-color: $color-white;
+  border-radius: 5px;
+  margin: 15px;
+  height: 500px;
+  @extend .light-shadow;
+  position: relative;
+
+  &__image {
+    &__img {
+      width: 100%;
+      height: 300px;
+      border-radius: 5px 5px 0 0;
+    }
+  }
+
+  &__details {
+    padding: 20px;
+  }
+
+  &__favorite {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+    &__button {
+      background-color: transparent;
+      border: none;
+      font-size: 25px;
+
+      &--selected {
+        color: $color-red;
+      }
+    }
+  }
+}

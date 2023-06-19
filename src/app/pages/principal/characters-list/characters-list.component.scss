@@ -1,0 +1,62 @@
+@import "../../../../theme/colors";
+
+.container {
+  .title-block {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .search-block {
+    display: flex;
+    width: 40%;
+
+    &__input {
+      margin: 0 10px;
+    }
+
+    &__select-box, &__input-box {
+      display: flex;
+      align-items: center;
+    }
+
+    &__label {
+      margin-right: 10px;
+    }
+
+    &__button {
+      width: 100px;
+    }
+  }
+
+  .characters-list {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    .search-block {
+      width: 100%;
+      flex-direction: column;
+      margin: auto 20px;
+
+      &__input {
+        width: 70%;
+        margin-left: 0;
+      }
+
+      &__button {
+        width: 65px
+      }
+
+      &__select-box,  &__input-box {
+        margin: 0 0 10px 0;
+      }
+
+      &__select {
+        width: 62%;
+      }
+    }
+  }
+}

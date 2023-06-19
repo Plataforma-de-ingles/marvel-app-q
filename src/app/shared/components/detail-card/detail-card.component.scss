@@ -1,0 +1,113 @@
+@import '../../../../theme/colors';
+@import '../../../../theme/utilities';
+
+.card {
+  display: flex;
+  background-color: $color-white;
+  border-radius: 8px;
+  @extend .light-shadow;
+  margin-bottom: 20px;
+  height: 600px;
+}
+
+.card-image {
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+.more-info {
+  text-decoration: none;
+}
+
+.card-content {
+  width: 100%;
+  margin: 30px;
+}
+
+.card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.card-tabs {
+  display: flex;
+  justify-content: center;
+  background-color: $color-primary;
+
+}
+
+.tab, .card-tabs {
+  @extend .border-radius-top;
+}
+
+.tab {
+  flex: 1;
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: transparent;
+  border: none;
+  color: $color-white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  @extend .border-radius-top;
+
+  &--active {
+    background-color: rgb(230, 67, 67);
+  }
+}
+
+.tab-content {
+  overflow-y: auto;
+  height: 400px;
+  padding: 10px;
+  @extend .border-radius-bottom;
+  @extend .light-shadow;
+ 
+    h5 {
+      padding: 6px;
+      margin: 5px;
+      border-radius: 5px;
+      border-bottom: 1px solid rgb(214, 214, 214);
+    }
+  
+}
+
+.card-actions {
+  text-align: right;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .card-description {
+    width: 85%;
+  }
+
+  .card-title{
+    font-size: 20px;
+  }
+
+  .card-tabs {
+    width: 87%;
+  }
+
+  .tab-content {
+    width: 80%;
+  }
+}

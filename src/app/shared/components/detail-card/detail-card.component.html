@@ -1,0 +1,19 @@
+<div class="card" *ngIf="character">
+  <div class="card-image">
+    <img class="card-image__img" [src]="character.thumbnail | characterImage" alt="Hero Image">
+  </div>
+  <div class="card-content">
+    <h3 class="card-title">{{ character.name }}</h3>
+    <p class="card-description">{{ character.description }} <a target="_blank" class="more-info"
+        [href]="'https://www.marvel.com/search?limit=20&query=' + character.name">...Más información</a></p>
+
+    <div class="card-tabs">
+      <button *ngFor="let tab of tabs" [ngClass]="{'tab': true, 'tab--active': getSelectedTab(tab) }"
+        (click)="onclickTab(tab)">{{ tab | titlecase }}</button>
+    </div>
+
+    <div class="tab-content">
+      <h5 *ngFor="let item of dataSelected">{{ item.name }}</h5>
+    </div>
+  </div>
+</div>
