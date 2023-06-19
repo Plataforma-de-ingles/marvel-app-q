@@ -6,6 +6,9 @@ import { PaginatorComponent } from './paginator/paginator.component';
 import { DetailCardComponent } from './detail-card/detail-card.component';
 import { FooterComponent } from './footer/footer.component';
 import { PipesModule } from '../../core/pipes/pipes.module';
+import { RouterModule, Routes } from '@angular/router';
+
+// const routes: Routes = [{ path: '', component: HeaderComponent}]
 
 @NgModule({
   declarations: [
@@ -17,7 +20,8 @@ import { PipesModule } from '../../core/pipes/pipes.module';
   ],
   imports: [
     CommonModule,
-    PipesModule
+    PipesModule,
+    // RouterModule.forChild(routes)
   ],
   exports: [
     HeaderComponent,
@@ -27,4 +31,6 @@ import { PipesModule } from '../../core/pipes/pipes.module';
     FooterComponent
   ]
 })
-export class ComponentsModule { }
+export class ComponentsModule {
+  hola: string = 'hola'
+ }

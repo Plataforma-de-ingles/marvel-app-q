@@ -11,7 +11,8 @@ sharedMappings.register(
 module.exports = {
   output: {
     uniqueName: "marvelApp",
-    publicPath: "auto"
+    publicPath: "auto",
+    module: true
   },
   optimization: {
     runtimeChunk: false
@@ -32,8 +33,7 @@ module.exports = {
         name: "marvelApp",
         filename: "remoteEntry.js",
         exposes: {
-            './headerComponent': './src/app/shared/components/header/header.component.ts',
-            './footerComponent': './src/app/shared/components/footer/footer.component.ts',
+            './PrincipalModule': './src/app/pages/principal/principal.module.ts',
         },        
         
         // For hosts (please adjust)
@@ -42,14 +42,9 @@ module.exports = {
 
         // },
 
-        shared: share({
-          "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
-          "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
-          "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
-          "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-
-          ...sharedMappings.getDescriptors()
-        })
+        shared: {
+          ...mf.shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' })
+        }
         
     }),
     sharedMappings.getPlugin()
