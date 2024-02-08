@@ -6,7 +6,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./pages/principal/principal.module').then((m) => m.PrincipalModule)
   }
-];
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
