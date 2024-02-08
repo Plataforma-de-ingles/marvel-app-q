@@ -31,6 +31,4 @@ import { RouterModule, Routes } from '@angular/router';
     FooterComponent
   ]
 })
-export class ComponentsModule {
-  hola: string = 'hola'
- }
+export class ComponentsModule {}
